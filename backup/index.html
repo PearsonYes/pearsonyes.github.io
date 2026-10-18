@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YouShouYan (有兽焉) - Reader Hub</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<script src="support.js"></script>
+<body class="min-h-screen flex flex-col justify-between">
+
+  <!-- Header -->
+  <header class="bg-white/80 backdrop-blur-md border-b border-amber-100 sticky top-0 z-50">
+    <div class="max-w-5xl mx-auto px-4 py-4 flex items-center justify-between">
+      <a href="index.html" class="flex items-center space-x-3">
+        <span class="text-2xl font-black tracking-tight text-amber-800">有兽焉 <span class="text-sm font-normal text-gray-500">YouShouYan</span></span>
+      </a>
+      
+      <!-- Global Language Switcher -->
+      <div class="flex items-center space-x-2">
+        <span class="text-xs font-semibold text-gray-500 uppercase">Lang:</span>
+        <select id="globalLangSelect" onchange="changeGlobalLanguage(this.value)" class="bg-amber-50 border border-amber-200 text-amber-900 text-sm rounded-lg px-3 py-1.5 focus:outline-none focus:ring-2 focus:ring-amber-400 font-medium cursor-pointer">
+          <option value="it">Italiano (IT)</option>
+          <option value="en">English (EN)</option>
+        </select>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Hub -->
+  <main class="max-w-4xl mx-auto px-4 py-10 flex-grow w-full">
+    <!-- Series Banner Intro -->
+    <div class="bg-gradient-to-r from-amber-50 via-sky-50 to-amber-50 rounded-3xl p-8 mb-10 border border-amber-100 shadow-sm text-center">
+      <h1 class="text-4xl font-black text-amber-900 mb-3">YouShouYan (有兽焉)</h1>
+      <p class="text-gray-600 max-w-xl mx-auto text-sm sm:text-base" data-i18n="subtitle">
+        Unofficial long-strip fan translation reader. Explore mythological Chinese creatures trying to live modern lives! Credits for the english translation goes to "Saphire".
+      </p>
+    </div>
+
+    <!-- Chapter List Grid -->
+    <h2 class="text-xl font-bold text-amber-900 mb-6 flex items-center">
+      <span class="bg-amber-500 w-2.5 h-6 rounded-full mr-2.5"></span>
+      <span data-i18n="chaptersTitle">Chapters List</span>
+    </h2>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+      <!-- Chapter 1 Card -->
+      <a href="ch1.html" class="chapter-card bg-white rounded-2xl p-6 flex flex-col justify-between">
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <span class="bg-sky-100 text-sky-800 text-xs font-bold px-3 py-1 rounded-full">Capitolo 01</span>
+            <span class="text-xs text-gray-400">Long Strip</span>
+          </div>
+          <h3 class="text-lg font-bold text-gray-900 mb-1">Disceso Sulla Terra</h3>
+          <p class="text-xs text-gray-500">Pixiu entra nel mondo umano alla ricerca di un lavoro e si imbatte in problemi.</p>
+        </div>
+        <div class="mt-6 flex items-center justify-between pt-4 border-t border-gray-100 text-sm font-semibold text-amber-600">
+          <span data-i18n="readNow">Read Chapter</span>
+          <span>&rarr;</span>
+        </div>
+      </a>
+
+      <!-- Chapter 2 Card -->
+      <a href="ch2.html" class="chapter-card bg-white rounded-2xl p-6 flex flex-col justify-between">
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <span class="bg-sky-100 text-sky-800 text-xs font-bold px-3 py-1 rounded-full">Capitolo 02</span>
+            <span class="text-xs text-gray-400">Long Strip</span>
+          </div>
+          <h3 class="text-lg font-bold text-gray-900 mb-1">Vecchio Amico</h3>
+          <p class="text-xs text-gray-500">Una sorpresa chiamata telefonica da Sibuxiang e un viaggio nelle montagne.</p>
+        </div>
+        <div class="mt-6 flex items-center justify-between pt-4 border-t border-gray-100 text-sm font-semibold text-amber-600">
+          <span data-i18n="readNow">Read Chapter</span>
+          <span>&rarr;</span>
+        </div>
+      </a>
+
+      <!-- Chapter 3 Card -->
+<!-- Chapter 3 Card -->
+<a href="ch3.html" class="chapter-card bg-white rounded-2xl p-6 flex flex-col justify-between">
+  <div>
+    <div class="flex items-center justify-between mb-4">
+      <!-- Change the 02 here to 03 -->
+      <span class="bg-sky-100 text-sky-800 text-xs font-bold px-3 py-1 rounded-full">Capitolo 03</span>
+      <span class="text-xs text-gray-400">Long Strip</span>
+    </div>
+    <h3 class="text-lg font-bold text-gray-900 mb-1">LUNGO VIAGGIO</h3>
+    <p class="text-xs text-gray-500">Un viaggio faticoso tra i monti e una pessima accoglienza per Sibuxiang.</p>
+  </div>
+  <div class="mt-6 flex items-center justify-between pt-4 border-t border-gray-100 text-sm font-semibold text-amber-600">
+    <span data-i18n="readNow">Read Chapter</span>
+    <span>&rarr;</span>
+  </div>
+</a>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-white border-t border-amber-100 py-6 text-center text-xs text-gray-500">
+    <p>YouShouYan (有兽焉) Translation Project &bull; Fan Reader Visualizer</p>
+  </footer>
+
+  <!-- Script for Language Persistence -->
+  <script>
+    const translations = {
+      it: {
+        subtitle: "Lettore ufficiale di traduzioni in formato long-strip. Scopri le creature mitologiche cinesi alle prese con la vita moderna! Crediti per la trauduzione italina vanno a Pear (IO!)",
+        support: "Supporta il progetto! <img src='support_me_on_kofi_beige.png' alt='Support Me on Ko-fi' class='inline-block w-5 h-5 ml-1'>",
+        chaptersTitle: "Lista Capitoli",
+        readNow: "Leggi Capitolo"
+      },
+      en: {
+        subtitle: "Official long-strip fan translation reader. Explore mythological Chinese creatures trying to live modern lives!  Credits for the english translation goes to Saphire.",
+        support: "Support the project! <img src='support_me_on_kofi_beige.png' alt='Support Me on Ko-fi' class='inline-block w-5 h-5 ml-1'>",
+        chaptersTitle: "Chapters List",
+        readNow: "Read Chapter"
+      }
+    };
+
+    function changeGlobalLanguage(lang) {
+      localStorage.setItem('ysy_lang', lang);
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (translations[lang] && translations[lang][key]) {
+          el.innerText = translations[lang][key];
+        }
+      });
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      const savedLang = localStorage.getItem('ysy_lang') || 'it';
+      document.getElementById('globalLangSelect').value = savedLang;
+      changeGlobalLanguage(savedLang);
+    });
+  </script>
+</body>
+</html>

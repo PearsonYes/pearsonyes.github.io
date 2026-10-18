@@ -8,6 +8,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="style.css">
 </head>
+<script src="support.js"></script>
 <body class="min-h-screen flex flex-col justify-between">
 
   <!-- Header -->
@@ -94,24 +95,38 @@
     <span>&rarr;</span>
   </div>
 </a>
+<!-- Chapter 4 Card -->
+<a href="ch4.html" class="chapter-card bg-white rounded-2xl p-6 flex flex-col justify-between">
+  <div>
+    <div class="flex items-center justify-between mb-4">
+      <!-- Change the 02 here to 04 -->
+      <span class="bg-sky-100 text-sky-800 text-xs font-bold px-3 py-1 rounded-full">Capitolo 04</span>
+      <span class="text-xs text-gray-400">Long Strip</span>
+    </div>
+    <h3 class="text-lg font-bold text-gray-900 mb-1">lavoro giornaliero</h3>
+    <p class="text-xs text-gray-500">Un viaggio faticoso tra i monti e una pessima accoglienza per Sibuxiang.</p>
+  </div>
+  <div class="mt-6 flex items-center justify-between pt-4 border-t border-gray-100 text-sm font-semibold text-amber-600">
+    <span data-i18n="readNow">Read Chapter</span>
+    <span>&rarr;</span>
+  </div>
+</a>
     </div>
   </main>
 
-  <!-- Footer -->
-  <footer class="bg-white border-t border-amber-100 py-6 text-center text-xs text-gray-500">
-    <p>YouShouYan (有兽焉) Translation Project &bull; Fan Reader Visualizer</p>
-  </footer>
 
   <!-- Script for Language Persistence -->
   <script>
     const translations = {
       it: {
         subtitle: "Lettore ufficiale di traduzioni in formato long-strip. Scopri le creature mitologiche cinesi alle prese con la vita moderna! Crediti per la trauduzione italina vanno a Pear (IO!)",
+        support: "Supporta il progetto! <img src='kofi_symbol.png' alt='Support Me on Ko-fi' class='inline-block w-5 h-5 ml-1'>",
         chaptersTitle: "Lista Capitoli",
         readNow: "Leggi Capitolo"
       },
       en: {
         subtitle: "Official long-strip fan translation reader. Explore mythological Chinese creatures trying to live modern lives!  Credits for the english translation goes to Saphire.",
+        support: "Support the project! <img src='kofi_symbol.png' alt='Support Me on Ko-fi' class='inline-block w-5 h-5 ml-1'>",
         chaptersTitle: "Chapters List",
         readNow: "Read Chapter"
       }
@@ -133,5 +148,19 @@
       changeGlobalLanguage(savedLang);
     });
   </script>
+    <!-- Footer -->
+  <footer class="bg-white border-t border-amber-100 py-6 text-center text-xs text-gray-500">
+    <p>YouShouYan (有兽焉) Translation Project &bull; Fan Reader Visualizer</p>
+  </footer>
+
+  <!-- Reusable Ko-fi support section -->
+  <script src="support.js"></script>
+
+  <!-- Script for Language Persistence -->
+  <script>
+    // Keep your existing translations and language code here!
+  </script>
+</body>
+</html>
 </body>
 </html>
