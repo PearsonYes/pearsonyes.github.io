@@ -118,35 +118,42 @@
 
 
   <!-- Script for Language Persistence -->
-  <script>
+ <script>
     const translations = {
-    it: {
-        subtitle: `Lettore ufficiale di traduzioni in formato long-strip. Scopri le creature mitologiche cinesi alle prese con la vita moderna! <custom-emoji name="sibuhappy"></custom-emoji>`,
-        support: "Supporta il progetto! <img src='kofi_symbol.png' alt='Support Me on Ko-fi' class='inline-block w-5 h-5 ml-1'>",
-        chaptersTitle: "Lista Capitoli",
-        readNow: "Leggi Capitolo"
-    },
-    en: {
-        subtitle: `Unofficial long-strip fan translation reader. Explore mythological Chinese creatures trying to live modern lives! <custom-emoji name="sibuhappy"></custom-emoji>`,
-        support: "Support the project! <img src='kofi_symbol.png' alt='Support Me on Ko-fi' class='inline-block w-5 h-5 ml-1'>",
-        chaptersTitle: "Chapters List",
-        readNow: "Read Chapter"
-    }
-};
+      it: {
+          subtitle: `Lettore ufficiale di traduzioni in formato long-strip. Scopri le creature mitologiche cinesi alle prese con la vita moderna! :sibuhappy:`,
+          support: "Supporta il progetto! <img src='kofi_symbol.png' alt='Support Me on Ko-fi' class='inline-block w-5 h-5 ml-1'>",
+          chaptersTitle: "Lista Capitoli",
+          readNow: "Leggi Capitolo"
+      },
+      en: {
+          subtitle: `Unofficial long-strip fan translation reader. Explore mythological Chinese creatures trying to live modern lives! :sibuhappy:`,
+          support: "Support the project! <img src='kofi_symbol.png' alt='Support Me on Ko-fi' class='inline-block w-5 h-5 ml-1'>",
+          chaptersTitle: "Chapters List",
+          readNow: "Read Chapter"
+      }
+    };
 
     function changeGlobalLanguage(lang) {
       localStorage.setItem('ysy_lang', lang);
       document.querySelectorAll('[data-i18n]').forEach(el => {
         const key = el.getAttribute('data-i18n');
         if (translations[lang] && translations[lang][key]) {
-          el.innerText = translations[lang][key];
+          // 🔥 1. Usa innerHTML invece di innerText per interpretare i tag e l'HTML
+          el.innerHTML = translations[lang][key];
         }
       });
+
+      // 🔥 2. Fai partire la magia delle emoji subito dopo aver aggiornato i testi!
+      if (typeof renderCustomEmojis === 'function') {
+        renderCustomEmojis();
+      }
     }
 
     window.addEventListener('DOMContentLoaded', () => {
       const savedLang = localStorage.getItem('ysy_lang') || 'it';
-      document.getElementById('globalLangSelect').value = savedLang;
+      const selectElement = document.getElementById('globalLangSelect');
+      if (selectElement) selectElement.value = savedLang;
       changeGlobalLanguage(savedLang);
     });
   </script>
