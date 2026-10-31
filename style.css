@@ -68,3 +68,11 @@ body {
   border-color: var(--primary-blue);
   box-shadow: 0 12px 20px -10px rgba(162, 210, 223, 0.4);
 }
+
+.custom-emoji {
+  display: inline-block;
+  width: 1.25em;
+  height: 1.25em;
+  vertical-align: -0.2em;
+  object-fit: contain;
+}
